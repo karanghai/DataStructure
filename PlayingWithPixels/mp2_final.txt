@@ -1,0 +1,243 @@
+Monad Autograder
+Testing mp2 at 2013-02-06 00:49:24
+
+"Programs must be written for people to read, and only incidentally for machines to execute." ~ Abelson and Sussman
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+InvertColorsEven . . . . . . . . . . . [8 pts] - passed
+FlipLeftEven . . . . . . . . . . . . . [5 pts] - passed
+FlipLeftOdd  . . . . . . . . . . . . . [5 pts] - passed
+AdjustBrightnessEven . . . . . . . . . [6 pts] - passed
+AdjustBrightnessEven2  . . . . . . . . [3 pts] - passed
+AdjustBrightnessEven3  . . . . . . . . [3 pts] - passed
+Valgrind1 (valgrind) . . . . . . . . . [5 pts] - passed
+AddPictureValidIndex . . . . . . . . . [3 pts] - passed
+AddPictureInvalidIndex . . . . . . . . [2 pts] - passed
+ImageAssignmentOperator  . . . . . . . [2 pts] - passed
+SceneGetPictureInvalidIndex  . . . . . [2 pts] - passed
+SceneChangeMaxLayersLarger . . . . . . [3 pts] - passed
+SceneChangeMaxLayersSmaller (valgrind) [1 pts] - FAILED: ==972==    by 0x405F73: proxy_test::SceneChangeMaxLayersSmaller(util::sizedpipestream<512ul>&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==
+SceneChangeMaxLayersInvalidChange  . . [2 pts] - FAILED: testscene.cpp:329: Assertion (*image == *red) failed
+SceneCopyCtor  . . . . . . . . . . . . [3 pts] - passed
+SceneCopyCtor2 . . . . . . . . . . . . [2 pts] - passed
+SceneAssignmentOperator  . . . . . . . [3 pts] - passed
+SceneAssignmentOperator2 . . . . . . . [2 pts] - passed
+SceneChangeLayer . . . . . . . . . . . [3 pts] - passed
+SceneChangeLayerInvalid  . . . . . . . [2 pts] - FAILED: Segmentation fault
+SceneDrawScene . . . . . . . . . . . . [3 pts] - passed
+SceneDrawScene2  . . . . . . . . . . . [3 pts] - passed
+SceneDrawScene3  . . . . . . . . . . . [3 pts] - passed
+SceneDrawScene4  . . . . . . . . . . . [3 pts] - passed
+SceneDrawSceneChangeLayer  . . . . . . [2 pts] - passed
+SceneDrawSceneDeletePicture  . . . . . [2 pts] - passed
+SceneDrawSceneTranslate  . . . . . . . [2 pts] - passed
+SceneDrawSceneTranslate2 . . . . . . . [2 pts] - passed
+SceneTranslateInvalid  . . . . . . . . [2 pts] - passed
+SceneTranslateInvalid2 . . . . . . . . [1 pts] - passed
+SceneDeletePictureInvalid  . . . . . . [2 pts] - passed
+Valgrind2 (valgrind) . . . . . . . . . [5 pts] - passed
+Valgrind3 (valgrind) . . . . . . . . . [5 pts] - FAILED: ==998==    by 0x41283B: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by
+
+
+Total score...
+================================================================
+TOTAL SCORE: 90
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+SceneChangeMaxLayersSmaller (run under valgrind) [1 points]
+Result: FAILED: ==972==    by 0x405F73: proxy_test::SceneChangeMaxLayersSmaller(util::sizedpipestream<512ul>&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==
+Took unknown time (2000ms timeout)
+Output:
+----------------------------------------------------------------
+Running SceneChangeMaxLayersSmaller [worth 1 points, output below]
+==972== Invalid write of size 8
+==972==    at 0x420205: Scene::addpicture(char const*, int, int, int) (scene.cpp:134)
+==972==    by 0x405F97: proxy_test::SceneChangeMaxLayersSmaller(util::sizedpipestream<512ul>&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x41283B: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40BE71: proxy::test_execution::child_test() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40B890: proxy::test_execution::child() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x4148B6: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40BCF5: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40AB7A: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40AA82: proxy::RunTests::run_single_test(char const*) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40A8EA: proxy::RunTests::execute_by_mode() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40A89B: proxy::RunTests::execute() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40A037: main (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==  Address 0x4c83928 is 0 bytes after a block of size 8 alloc'd
+==972==    at 0x4A0674C: operator new[](unsigned long) (vg_replace_malloc.c:305)
+==972==    by 0x41FED1: Scene::changemaxlayers(int) (scene.cpp:85)
+==972==    by 0x405F73: proxy_test::SceneChangeMaxLayersSmaller(util::sizedpipestream<512ul>&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x41283B: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40BE71: proxy::test_execution::child_test() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40B890: proxy::test_execution::child() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x4148B6: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40BCF5: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40AB7A: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40AA82: proxy::RunTests::run_single_test(char const*) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40A8EA: proxy::RunTests::execute_by_mode() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40A89B: proxy::RunTests::execute() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972== 
+==972== Invalid read of size 8
+==972==    at 0x420240: Scene::addpicture(char const*, int, int, int) (scene.cpp:135)
+==972==    by 0x405F97: proxy_test::SceneChangeMaxLayersSmaller(util::sizedpipestream<512ul>&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x41283B: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40BE71: proxy::test_execution::child_test() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40B890: proxy::test_execution::child() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x4148B6: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40BCF5: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40AB7A: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40AA82: proxy::RunTests::run_single_test(char const*) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40A8EA: proxy::RunTests::execute_by_mode() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40A89B: proxy::RunTests::execute() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40A037: main (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==  Address 0x4c83928 is 0 bytes after a block of size 8 alloc'd
+==972==    at 0x4A0674C: operator new[](unsigned long) (vg_replace_malloc.c:305)
+==972==    by 0x41FED1: Scene::changemaxlayers(int) (scene.cpp:85)
+==972==    by 0x405F73: proxy_test::SceneChangeMaxLayersSmaller(util::sizedpipestream<512ul>&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x41283B: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40BE71: proxy::test_execution::child_test() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40B890: proxy::test_execution::child() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x4148B6: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40BCF5: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40AB7A: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40AA82: proxy::RunTests::run_single_test(char const*) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40A8EA: proxy::RunTests::execute_by_mode() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40A89B: proxy::RunTests::execute() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972== 
+==972== Invalid write of size 4
+==972==    at 0x4202BF: Scene::addpicture(char const*, int, int, int) (scene.cpp:136)
+==972==    by 0x405F97: proxy_test::SceneChangeMaxLayersSmaller(util::sizedpipestream<512ul>&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x41283B: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40BE71: proxy::test_execution::child_test() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40B890: proxy::test_execution::child() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x4148B6: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40BCF5: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40AB7A: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40AA82: proxy::RunTests::run_single_test(char const*) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40A8EA: proxy::RunTests::execute_by_mode() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40A89B: proxy::RunTests::execute() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==    by 0x40A037: main (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==972==  Address 0x4c83974 is 0 bytes after a block of size 4 alloc'd
+==972==    at 0x4A0674C: operator new[](unsigned long) (vg_replace_malloc.c:305)
+==972==    by 0x41FEE6: Scene::changemaxlayers(int) (scene.cpp:86)
+==972==    by 0x405F73: proxy_test::SceneChangeMaxLayersSmaller(util::sizedpipestream<512ul>&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==9
+
+----------------------------------------------------------------
+SceneChangeMaxLayersInvalidChange [2 points]
+Result: FAILED: testscene.cpp:329: Assertion (*image == *red) failed
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+invalid newmax
+
+----------------------------------------------------------------
+SceneChangeLayerInvalid [2 points]
+Result: FAILED: Segmentation fault
+Took 22202288ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+invalid index
+invalid index
+
+----------------------------------------------------------------
+Valgrind3 (run under valgrind) [5 points]
+Result: FAILED: ==998==    by 0x41283B: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by
+Took unknown time (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Running Valgrind3 [worth 5 points, output below]
+==998== Invalid write of size 4
+==998==    at 0x4202DA: Scene::addpicture(char const*, int, int, int) (scene.cpp:137)
+==998==    by 0x408B5A: proxy_test::Valgrind3(util::sizedpipestream<512ul>&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x41283B: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40BE71: proxy::test_execution::child_test() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40B890: proxy::test_execution::child() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x4148B6: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40BCF5: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40AB7A: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40AA82: proxy::RunTests::run_single_test(char const*) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40A8EA: proxy::RunTests::execute_by_mode() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40A89B: proxy::RunTests::execute() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40A037: main (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==  Address 0x4ca837c is 12 bytes inside a block of size 20 free'd
+==998==    at 0x4A04E5D: operator delete[](void*) (vg_replace_malloc.c:409)
+==998==    by 0x420162: Scene::changemaxlayers(int) (scene.cpp:127)
+==998==    by 0x408B36: proxy_test::Valgrind3(util::sizedpipestream<512ul>&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x41283B: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40BE71: proxy::test_execution::child_test() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40B890: proxy::test_execution::child() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x4148B6: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40BCF5: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40AB7A: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40AA82: proxy::RunTests::run_single_test(char const*) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40A8EA: proxy::RunTests::execute_by_mode() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40A89B: proxy::RunTests::execute() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998== 
+==998== Invalid read of size 4
+==998==    at 0x4203E0: Scene::changelayer(int, int) (scene.cpp:155)
+==998==    by 0x408B73: proxy_test::Valgrind3(util::sizedpipestream<512ul>&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x41283B: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40BE71: proxy::test_execution::child_test() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40B890: proxy::test_execution::child() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x4148B6: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40BCF5: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40AB7A: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40AA82: proxy::RunTests::run_single_test(char const*) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40A8EA: proxy::RunTests::execute_by_mode() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40A89B: proxy::RunTests::execute() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40A037: main (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==  Address 0x4ca8374 is 4 bytes inside a block of size 20 free'd
+==998==    at 0x4A04E5D: operator delete[](void*) (vg_replace_malloc.c:409)
+==998==    by 0x420162: Scene::changemaxlayers(int) (scene.cpp:127)
+==998==    by 0x408B36: proxy_test::Valgrind3(util::sizedpipestream<512ul>&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x41283B: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40BE71: proxy::test_execution::child_test() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40B890: proxy::test_execution::child() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x4148B6: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40BCF5: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40AB7A: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40AA82: proxy::RunTests::run_single_test(char const*) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40A8EA: proxy::RunTests::execute_by_mode() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40A89B: proxy::RunTests::execute() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998== 
+==998== Invalid write of size 4
+==998==    at 0x4203E2: Scene::changelayer(int, int) (scene.cpp:155)
+==998==    by 0x408B73: proxy_test::Valgrind3(util::sizedpipestream<512ul>&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x41283B: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40BE71: proxy::test_execution::child_test() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40B890: proxy::test_execution::child() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x4148B6: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40BCF5: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40AB7A: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40AA82: proxy::RunTests::run_single_test(char const*) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40A8EA: proxy::RunTests::execute_by_mode() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40A89B: proxy::RunTests::execute() (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x40A037: main (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==  Address 0x4ca837c is 12 bytes inside a block of size 20 free'd
+==998==    at 0x4A04E5D: operator delete[](void*) (vg_replace_malloc.c:409)
+==998==    by 0x420162: Scene::changemaxlayers(int) (scene.cpp:127)
+==998==    by 0x408B36: proxy_test::Valgrind3(util::sizedpipestream<512ul>&) (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 0x41283B: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==998==    by 
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 90
+

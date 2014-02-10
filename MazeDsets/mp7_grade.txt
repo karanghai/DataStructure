@@ -1,0 +1,7 @@
+Monad Autograder
+Testing mp7 at 2013-04-30 01:19:48
+
+"Anti-intellectualism has been a constant thread winding its way through our political and cultural life, nurtured by the false notion that democracy means that 'my ignorance is just as good as your knowledge.'" ~ Isaac Asimov
+
+Setting up test environment...
+Error: /dev/shm/geigle1/grading/monad/sp13-cs225/ksghai2/mp7/maze.h does not exist.

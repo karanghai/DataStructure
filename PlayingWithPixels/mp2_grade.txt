@@ -1,0 +1,51 @@
+Monad Autograder
+Testing mp2 at 2013-02-05 00:37:24
+
+"Optimism is an occupational hazard of programming; feedback is the treatment." ~ Kent Beck
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+InvertColorsEven . . . . . . . . . . . [8 pts] - passed
+FlipLeftEven . . . . . . . . . . . . . [5 pts] - passed
+FlipLeftOdd  . . . . . . . . . . . . . [5 pts] - passed
+AdjustBrightnessEven . . . . . . . . . [6 pts] - passed
+AdjustBrightnessEven2  . . . . . . . . [3 pts] - passed
+AdjustBrightnessEven3  . . . . . . . . [3 pts] - passed
+Valgrind1 (valgrind) . . . . . . . . . [5 pts] - passed
+AddPictureValidIndex . . . . . . . . . [3 pts] - FAILED
+AddPictureInvalidIndex . . . . . . . . [2 pts] - FAILED
+ImageAssignmentOperator  . . . . . . . [2 pts] - FAILED
+SceneGetPictureInvalidIndex  . . . . . [2 pts] - FAILED
+SceneChangeMaxLayersLarger . . . . . . [3 pts] - FAILED
+SceneChangeMaxLayersSmaller (valgrind) [1 pts] - FAILED
+SceneChangeMaxLayersInvalidChange  . . [2 pts] - FAILED
+SceneCopyCtor  . . . . . . . . . . . . [3 pts] - FAILED
+SceneCopyCtor2 . . . . . . . . . . . . [2 pts] - FAILED
+SceneAssignmentOperator  . . . . . . . [3 pts] - FAILED
+SceneAssignmentOperator2 . . . . . . . [2 pts] - FAILED
+SceneChangeLayer . . . . . . . . . . . [3 pts] - FAILED
+SceneChangeLayerInvalid  . . . . . . . [2 pts] - FAILED
+SceneDrawScene . . . . . . . . . . . . [3 pts] - FAILED
+SceneDrawScene2  . . . . . . . . . . . [3 pts] - FAILED
+SceneDrawScene3  . . . . . . . . . . . [3 pts] - FAILED
+SceneDrawScene4  . . . . . . . . . . . [3 pts] - FAILED
+SceneDrawSceneChangeLayer  . . . . . . [2 pts] - FAILED
+SceneDrawSceneDeletePicture  . . . . . [2 pts] - FAILED
+SceneDrawSceneTranslate  . . . . . . . [2 pts] - FAILED
+SceneDrawSceneTranslate2 . . . . . . . [2 pts] - FAILED
+SceneTranslateInvalid  . . . . . . . . [2 pts] - FAILED
+SceneTranslateInvalid2 . . . . . . . . [1 pts] - FAILED
+SceneDeletePictureInvalid  . . . . . . [2 pts] - FAILED
+Valgrind2 (valgrind) . . . . . . . . . [5 pts] - FAILED
+Valgrind3 (valgrind) . . . . . . . . . [5 pts] - FAILED
+
+
+Total score...
+================================================================
+TOTAL SCORE: 35
+

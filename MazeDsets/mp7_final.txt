@@ -1,0 +1,99 @@
+Monad Autograder
+Testing mp7 at 2013-05-01 01:38:38
+
+"To iterate is human, to recurse divine." ~ L. Peter Deutsch
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+addElements1  . . . . . . [5 pts] - passed
+addElements2  . . . . . . [5 pts] - passed
+testFindAndSetUnion1  . . [5 pts] - passed
+testFindAndSetUnion2  . . [5 pts] - passed
+testFindAndSetUnion3  . . [5 pts] - passed
+testMakeSmallMaze . . . . [5 pts] - passed
+testMakeMazeConnected . . [5 pts] - passed
+testMakeMazeAcyclic . . . [5 pts] - passed
+testMakeMazeTree1000  . . [5 pts] - passed
+testMakeMazeRandom  . . . [5 pts] - passed
+testSolveMazeValidPath  . [5 pts] - FAILED: unit_tests.cpp:328: No solution was generated
+testSolutionBottomRow . . [5 pts] - FAILED: unit_tests.cpp:356: Didn't end up at the bottom row
+testSolutionCorrectSquare [5 pts] - FAILED: unit_tests.cpp:375: Didn't end up at the bottom row
+testSolveMazeSmall  . . . [5 pts] - FAILED: unit_tests.cpp:395: [solution.size() => 0] != [soln.getSolutionSize() => 3]
+testSolveMazeLarge  . . . [5 pts] - FAILED: unit_tests.cpp:395: [solution.size() => 0] != [soln.getSolutionSize() => 6768]
+testDrawMazeSmall . . . . [5 pts] - passed
+testDrawMazeMed . . . . . [5 pts] - passed
+testDrawMazeLarge . . . . [5 pts] - passed
+testDrawSolutionMed . . . [5 pts] - FAILED: unit_tests.cpp:458: Assertion (*actualOutput == solnImage) failed
+testDrawSolutionLarge . . [5 pts] - FAILED: unit_tests.cpp:473: Assertion (*actualOutput == solnImage) failed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 65
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+testSolveMazeValidPath [5 points]
+Result: FAILED: unit_tests.cpp:328: No solution was generated
+Took 1ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testSolutionBottomRow [5 points]
+Result: FAILED: unit_tests.cpp:356: Didn't end up at the bottom row
+Took 1ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testSolutionCorrectSquare [5 points]
+Result: FAILED: unit_tests.cpp:375: Didn't end up at the bottom row
+Took 1ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testSolveMazeSmall [5 points]
+Result: FAILED: unit_tests.cpp:395: [solution.size() => 0] != [soln.getSolutionSize() => 3]
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+first 10 steps in solution:
+
+----------------------------------------------------------------
+testSolveMazeLarge [5 points]
+Result: FAILED: unit_tests.cpp:395: [solution.size() => 0] != [soln.getSolutionSize() => 6768]
+Took 3328ms (15000ms timeout)
+Output:
+----------------------------------------------------------------
+first 10 steps in solution:
+
+----------------------------------------------------------------
+testDrawSolutionMed [5 points]
+Result: FAILED: unit_tests.cpp:458: Assertion (*actualOutput == solnImage) failed
+Took 55ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testDrawSolutionLarge [5 points]
+Result: FAILED: unit_tests.cpp:473: Assertion (*actualOutput == solnImage) failed
+Took 5729ms (15000ms timeout)
+Output:
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 65
+
